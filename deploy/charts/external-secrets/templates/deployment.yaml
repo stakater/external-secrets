@@ -64,6 +64,7 @@ spec:
           {{- end }}
           ports:
             - containerPort: {{ .Values.prometheus.service.port }}
+              name: prometheus
               protocol: TCP
           {{- with .Values.extraEnv }}
           env:

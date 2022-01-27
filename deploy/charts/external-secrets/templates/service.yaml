@@ -13,7 +13,8 @@ spec:
   type: ClusterIP
   ports:
     - port: {{ .Values.prometheus.service.port }}
-      targetPort: {{ .Values.prometheus.service.port }}
+      targetPort: prometheus
+      name: prometheus
       protocol: TCP
   selector:
     {{- include "external-secrets.selectorLabels" . | nindent 4 }}
