@@ -83,4 +83,4 @@ affinity: {}
 # -- Pod priority class name.
 priorityClassName: ""
 serviceMonitor:
-   enabled: true
+   enabled: false
