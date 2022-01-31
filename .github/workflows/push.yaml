@@ -44,7 +44,7 @@ jobs:
     # Generate tag for chart without "v" prefix
     - name: Generate Tag
       id: generate_tag
-      uses: anothrNick/github-tag-action@1.26.0
+      uses: anothrNick/github-tag-action@1.35.0
       env:
         GITHUB_TOKEN: ${{ secrets.STAKATER_GITHUB_TOKEN }}
         WITH_V: false
@@ -55,7 +55,7 @@ jobs:
     - name: Update Chart Version
       env:
         VERSION: ${{ steps.generate_tag.outputs.new_tag }}
-      run: make bump-chart
+      run: make bump-chart 
 
     # Set Up Helm
     - name: Set up Helm
